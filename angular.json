@@ -25,9 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "flowbite/dist/flowbite.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "flowbite/dist/flowbite.min.js",
+              "flowbite/dist/datepicker.min.js"
+            ]
           },
           "configurations": {
             "production": {

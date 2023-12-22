@@ -1,0 +1,49 @@
+<div class="loginPage flex max-w-[1440px] m-auto">
+    <div class="lg:pr-10 lg:pt-10 w-full lg:max-w-[60%] relative">
+        <div class="lg:mb-10 mb-5 lg:text-left text-center block"><img class="m-auto lg:m-0" src="assets/logo.svg"
+                alt="" /></div>
+        <p style="font-family:'Lobster Two'"
+            class="lg:text-[28px] text-[20px] text-[#0B322C] lg:leading-[44px] lg:text-left text-center">“Agilibo
+            incorporates best practices from Scrum framework, Management 3.0 and DevOps to create a unique mobile and
+            web application that would help multiple
+            Scrum teams to realize agility as a mindset and work practice to shape your culture, boost happiness and
+            enhance
+            team productivity.”</p>
+        <img src="assets/lightLogo.svg" alt=""
+            class="absolute top-[540px] left-[50%] translate-x-[-50%] lg:block hidden" />
+    </div>
+    <div class="max-w-[500px] w-full m-auto">
+        <form [formGroup]="loginForm"
+            class="ml-auto rounded-[10px] bg-white shadow-[0px_4px_35px_0px_rgba(0,0,0,0.08)] lg:p-10 p-5 lg:mt-20 mt-5 w-full">
+            <h3 style="font-family:'Lobster Two'"
+                class=" pb-8 lg:text-[55px] text-[40px] text-[#333] leading-none font-normal">Login</h3>
+            <div class="inputBox">
+                <label>Email</label>
+                <input type="email" formControlName="email" placeholder="Email" />
+            </div>
+            <div class="inputBox">
+                <label>Password</label>
+                <input type="password" formControlName="password" placeholder="******" />
+            </div>
+            <div class="mb-8">
+                <a class="text-[16px] text-[#4B413D] leading-none underline font-semibold" href="">Forget Password</a>
+            </div>
+            <div class="mb-12">
+                <button (click)="onSubmit()" style="font-family:'Lobster Two';"
+                    class="bg-[#838988] shadow-[0px_4px_19px_0px_rgba(183,183,183,0.90);] text-white leading-[30px] py-3 px-2 rounded-[6px] w-full text-[26px]">
+                    Sign in
+                </button>
+            </div>
+            <div class="text-center">
+                <p style="font-family:'Lobster Two';" class="mb-3 text-[26px] text-[#B5B5B5]">or continue with</p>
+                <div class="flex items-center gap-2 m-auto justify-center">
+                    <i><img src="assets/google.svg" alt="" /></i>
+                    <i><img src="assets/linkedin.svg" alt="" /></i>
+                    <i><img src="assets/office365.svg" alt="" /></i>
+                </div>
+            </div>
+        </form>
+        <p style="font-family:'Lobster Two'" class=" block text-center py-6 text-[22px] text-[#666] leading-none">Don’t
+            have account? <a class="text-[#57BFB0] underline" href="">Sign Up</a></p>
+    </div>
+</div>

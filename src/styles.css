@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[type=text]:focus {
+    outline-offset: 0;
+    outline: none;
+}
+
+body:before {
+    content: '';
+    height: 280px;
+    height: 300px;
+    background: #F08A5D;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    z-index: -1;
+}
+
+body {
+    z-index: 1;
+    position: relative;
+}
+
+header.header {
+    border-radius: 0px 0px 20px 20px;
+    background: linear-gradient(90deg, #F08A5D 0%, #CD5E2C 100%);
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+
+
+.loginPage:before {
+    background: linear-gradient(90deg, #A9E8E0 0%, #47B7A7 100%);
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 460px;
+    z-index: -1;
+  }
+  
+  .loginPage {
+    padding: 0 80px 40px;
+  }
+  
+  .inputBox {
+    display: block;
+    margin: 0 0 25px;
+  }
+  
+  .inputBox label {
+    display: block;
+    font-size: 18px;
+    color: #4B413D;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0 0 5px;
+  }
+  
+  .inputBox input {
+    border-radius: 4px;
+    border: 1px solid #D2CFCE;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 12px 20px;
+    line-height: 20px;
+    width: 100%;
+  }
+  

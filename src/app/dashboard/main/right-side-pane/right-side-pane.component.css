@@ -1,0 +1,82 @@
+.veryHappyTab span {
+  color: #8C73FF;
+}
+
+.veryHappyTab strong {
+  background: #ECF1FE;
+  color: #8C73FF;
+}
+
+.disappointedTab span {
+  color: #EA5455;
+}
+
+.disappointedTab strong {
+  background: #FCE4E4;
+  color: #EA5455;
+}
+
+.positiveTab span {
+  color: #61CD82;
+}
+
+.positiveTab strong {
+  background: #DAFAE2;
+  color: #61CD82;
+}
+
+.downTab span {
+  color: #00CFE8;
+}
+
+.downTab strong {
+  background: #D6F7FB;
+  color: #00CFE8;
+}
+
+
+.tabs-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tabs-wrapper {
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+}
+
+.customTabs {
+  transition: transform 0.3s ease;
+  border-bottom: 1px solid #D7DBE7;
+}
+
+.customTabs>div {
+  display: flex;
+  align-items: center;
+}
+
+.customTabs span {
+  margin: 0 8px 0 0;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.customTabs strong {
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 26px;
+  justify-content: center;
+}

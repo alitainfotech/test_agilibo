@@ -1,0 +1,34 @@
+<div class=" bg-white border-[1px] border-[#D7DBE7] rounded-[6px] ">
+  <div class="tabs-container relative !overflow-visible">
+    <!-- Left Arrow Button -->
+    <button
+      class="absolute left-[-18px] top-1/2 transform -translate-y-1/2 border rounded-full h-8 w-8 flex items-center justify-center border-[#D7DBE7] bg-white z-10"
+      (click)="scrollTabs('left')">
+      <img src="assets/leftArrow.svg" alt="">
+    </button>
+
+    <div class="tabs-wrapper" #tabsWrapper>
+      <!-- Tabs Content -->
+      <div class="flex customTabs p-5 gap-6" [ngStyle]="{ 'transform': 'translateX(' + tabsOffset + ')' }">
+        <div *ngFor="let tab of tabsData" [ngClass]="tab.cssClass">
+          <span>{{ tab.label }}</span>
+          <strong>{{ tab.value }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Arrow Button -->
+    <button
+      class="absolute right-[-18px] top-1/2 transform -translate-y-1/2 border rounded-full h-8 w-8 flex items-center justify-center border-[#D7DBE7] bg-white z-10"
+      (click)="scrollTabs('right')">
+      <img src="assets/rightArrow.svg" alt="">
+    </button>
+  </div>
+
+  <!-- Your Map Container -->
+  <div class="grid grid-cols-3 gap-5 p-5">
+    <div *ngFor="let data of cardData">
+      <app-card [cardData]="data"></app-card>
+    </div>
+  </div>
+</div>

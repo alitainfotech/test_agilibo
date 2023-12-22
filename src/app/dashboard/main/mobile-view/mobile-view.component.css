@@ -1,0 +1,5 @@
+
+.mobileTabs li.active {
+  background: linear-gradient(90deg, #F08A5D 0%, #CD5E2C 100%);
+  color: #fff;
+}

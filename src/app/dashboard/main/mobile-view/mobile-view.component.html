@@ -1,0 +1,112 @@
+<div class="bg-white rounded-[6px] p-[10px]">
+  <div class="mb-3 rounded-[4px] border-[1px] border-[rgba(217,217,217,.4)] py-2 pb-2 px-2 flex items-center justify-center	shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05);]
+    [&amp;>p]:text-[12px] [&amp;>p]:text-[#666] [&amp;>p]:leading-[14px] [&amp;>p]:font-semibold gap-2 relative">
+    <p class="font-semibold text-gray-500 text-[12px]">{{date[0]| date: 'HH:mm EEE, dd, MMM y'}}</p>
+    <i class="mx-1" (click)="date.reverse()"><img src="assets/compareArrows.svg" alt="" /></i>
+    <p class="font-semibold text-gray-500 text-[12px]">{{date[1]| date: 'HH:mm EEE, dd, MMM y'}}</p>
+  </div>
+  <div class="bg-white border-[1px] border-[#D9D9D9] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)] rounded-[4px]">
+    <div class="shadow-md border-b-2 border-gray-300 rounded-t-lg flex text-center mobileTabs overflow-hidden">
+      <ul class="w-full flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        <li *ngFor="let tab of tabs"
+          [ngClass]="{'active': tab === selectedTab, 'hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white': tab !== selectedTab}"
+          class="flex-1 px-4 py-3 rounded-0 cursor-pointer" (click)="selectedTab = tab">
+          {{ tab }}
+        </li>
+      </ul>
+    </div>
+    <!-- Overview Tab content start -->
+    <div class="p-3" *ngIf="selectedTab==='Overview'">
+      <h2 class="text-[18px] text-[#D66838] font-semibold pb-2">Solution Focused Coaching Circle</h2>
+      <p class="text-[#666] font-medium text-[14px] pb-5 leading-[20px]">At the very top of lorem Ipsum has been an the
+        industry's standard dummy text ever a since the 1500s, when an took...</p>
+      <div class="bg-[rgba(217,217,217,.2)] rounded-[6px] [&>div>span]:text-[11px] flex justify-between	px-4 
+        [&>div>span]:font-semibold [&>div>span]:leading-[14px] [&>div>span]:block [&>div>span]:text-[#999] [&>div>span]:uppercase
+        [&>div>p]:text-[12px] [&>div>p]:font-semibold [&>div>p]:leading-[14px] [&>div>p]:block [&>div>p]:text-[#666]">
+        <div class="flex gap-2 py-[8px] items-center">
+          <i><img src="assets/user.svg" alt="" class="w-[34px] h-[34px]" /></i>
+          <div class="[&>span]:text-[11px] [&>span]:font-semibold [&>span]:leading-[14px] [&>span]:block [&>span]:text-[#999]
+            [&>p]:text-[12px] [&>p]:font-semibold [&>p]:leading-[14px] [&>p]:block [&>p]:text-[#666]"><span>Created
+              BY</span>
+            <p>Mambo Jumbo</p>
+          </div>
+        </div>
+        <div class="w-[1px] h-[49px] bg-[#E7E4E4]"></div>
+        <div class="py-[10px]"><span>Event Type</span>
+          <p>Webinar</p>
+        </div>
+      </div>
+      <div class="flex py-3 justify-center mb-1">
+        <p class="text-[12px] text-[#999]">Feedback status : <span class="text-[#ED895C]">2 Days Remaining</span></p>
+      </div>
+      <div class="m-auto rounded border border-gray-300 pt-2 pb-2   flex items-center justify-center relative">
+        <div
+          class="text-xs text-gray-400 uppercase bg-white px-4 absolute left-1/2 top-[-7px] whitespace-nowrap transform -translate-x-1/2 font-semibold ">
+          Event happened between
+        </div>
+        <p class="font-semibold text-gray-500 text-[12px]">{{date[0]| date: 'HH:mm EEE, dd, MMM y'}}</p>
+        <i class="mx-1" (click)="date.reverse()"><img src="assets/compareArrows.svg" alt="" /></i>
+        <p class="font-semibold text-gray-500 text-[12px]">{{date[1]| date: 'HH:mm EEE, dd, MMM y'}}</p>
+      </div>
+
+    </div>
+    <!-- Overview Tab content End -->
+    <!-- Chart Tab content start -->
+    <div class="p-3" *ngIf="selectedTab==='Charts'">
+      <img src="assets/graph.jpg" alt="" />
+    </div>
+    <!-- Chart Tab content End -->
+    <!-- Feedback Tab content Start -->
+    <div class="p-3" *ngIf="selectedTab==='Feedback'">
+      <div class="tabs-container relative !overflow-visible">
+        <!-- Left Arrow Button -->
+        <button
+          class="absolute left-[-28px] top-1/2 transform -translate-y-1/2 border rounded-full h-8 w-8 flex items-center justify-center border-[#D7DBE7] bg-white z-10"
+          (click)="scrollTabs('left')">
+          <img src="assets/leftArrow.svg" alt="">
+        </button>
+
+        <div class="tabs-wrapper" #tabsWrapper>
+          <!-- Tabs Content -->
+          <div class="flex customTabs p-3 gap-6" [ngStyle]="{ 'transform': 'translateX(' + tabsOffset + ')' }">
+            <div *ngFor="let tab of tabsData" [ngClass]="tab.cssClass">
+              <span>{{ tab.label }}</span>
+              <strong>{{ tab.value }}</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Arrow Button -->
+        <button
+          class="absolute right-[-28px] top-1/2 transform -translate-y-1/2 border rounded-full h-8 w-8 flex items-center justify-center border-[#D7DBE7] bg-white z-10"
+          (click)="scrollTabs('right')">
+          <img src="assets/rightArrow.svg" alt="">
+        </button>
+      </div>
+
+      <div class="p-3 flex gap-3 flex-col	">
+        <div *ngFor="let data of cardData">
+          <app-card [cardData]="data"></app-card>
+        </div>
+      </div>
+    </div>
+    <!-- Feedback Tab content End -->
+    <!-- Search Tab content start -->
+    <div class="p-3" *ngIf="selectedTab==='Search'">
+      <div class="p-3">
+        <div
+          class="bg-white border-[1px] border-[#D9D9D9] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)] rounded-[6px] pl-[52px] pr-3 relative w-full flex items-center mb-3">
+          <button class="border-0 absolute  left-[15px]">
+            <img src="assets/search-02.svg" alt="" /></button>
+          <div class="h-6 w-[1px] bg-[rgba(0,0,0,.15)] mr-1"></div>
+          <input type="text" placeholder="Search" name=""
+            class="bg-transparent border-0 w-full leading-[38px] text-[20px] focus:outline-none focus:ring-0 ">
+        </div>
+
+        <app-card [cardData]="cardData[0]"></app-card>
+
+      </div>
+    </div>
+    <!-- Search Tab content End -->
+  </div>
+</div>

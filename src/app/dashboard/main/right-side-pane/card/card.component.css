@@ -1,0 +1,79 @@
+.disappointed>div:nth-child(1) {
+  background: #FCE8E8;
+}
+
+.disappointed>div:nth-child(2) {
+  background: #FFF0F0;
+}
+
+.disappointed h4,
+.disappointed h3 {
+  color: #EA5455;
+}
+
+.disappointed p {
+  color: #847474;
+}
+
+.disappointed svg path {
+  fill: #EA5455;
+}
+
+.disappointed .dropdown {
+  border: 1px solid #ffb4b5;
+  background: #fce8e8 !important;
+}
+
+.veryHappy>div:nth-child(1) {
+  background: #E3E8F4;
+}
+
+.veryHappy>div:nth-child(2) {
+  background: #ECF1FE;
+}
+
+.veryHappy h4,
+.veryHappy h3 {
+  color: #8C73FF;
+}
+
+.veryHappy p {
+  color: #7C8293;
+}
+
+.veryHappy svg path {
+  fill: #8C73FF;
+}
+
+.veryHappy .dropdown {
+  border: 1px solid #c6d7ff;
+  background: #E3E8F4 !important;
+}
+
+
+.positive>div:nth-child(1) {
+  background: #C5F3D0;
+}
+
+.positive>div:nth-child(2) {
+  background: #DAFAE2;
+}
+
+.positive h4,
+.positive h3 {
+  color: #61CD82;
+}
+
+.positive p {
+  color: #829486;
+}
+
+.positive svg path {
+  fill: #61CD82;
+}
+
+.positive .dropdown {
+  border: 1px solid #99e7ac;
+  background: #C5F3D0 !important;
+}
+
